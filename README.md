@@ -1,34 +1,18 @@
-### Basic Yelp client
+# Yelp
 
-This is a headless example of how to implement an OAuth 1.0a Yelp API client. The Yelp API provides an application token that allows applications to make unauthenticated requests to their search API.
+Yelp Application for Homework #3
 
-### Next steps
+Time spent: 14 hours
 
-- Check out `BusinessesViewController.swift` to see how to use the `Business` model.
+Completed:
 
-### Sample request
+* [Done] Search results page: Dynamic Row Heights
+* [Done] Search results page: Auto layout of cells
+* [Done] Search results page: Search Bar in Navigation bar
+* [Done] Filters Page: Filters for deal, sort, categories
+* [Done] Navigation between Search Results and Filters
+* [Done] Filters results by selected filters
 
-**Basic search with query**
+![Video Walkthrough](Demo.gif)
 
-```
-Business.searchWithTerm("Thai", completion: { (businesses: [Business]!, error: NSError!) -> Void in
-    self.businesses = businesses
-    
-    for business in businesses {
-        println(business.name!)
-        println(business.address!)
-    }
-})
-```
-
-**Advanced search with categories, sort, and deal filters**
-
-```
-Business.searchWithTerm("Restaurants", sort: .Distance, categories: ["asianfusion", "burgers"], deals: true) { (businesses: [Business]!, error: NSError!) -> Void in
-
-    for business in businesses {
-        println(business.name!)
-        println(business.address!)
-    }
-}
-```
+Note: to embed the gif file, just check your gif file into your repo and update the name of the file above.
