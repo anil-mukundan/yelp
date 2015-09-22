@@ -8,11 +8,20 @@
 
 import UIKit
 
-class FiltersViewController: UIViewController {
+@objc protocol FiltersViewControllerDelegate {
+    optional func filtersViewController(filtersviewController: FiltersViewController, didUpdateFilters filters: [String:AnyObject])
+}
+
+class FiltersViewController: UIViewController, UITableViewDataSource, UITableViewDelegate, CategoryFilterCellDelegate {
     
     var categories: [[String:String]]!
+    var switchStates = [Int:Bool]()
 
+    weak var delegate: FiltersViewControllerDelegate?
+    
     @IBOutlet weak var dealSwitch: UISwitch!
+    
+    @IBOutlet weak var sortSegmentedControl: UISegmentedControl!
     
     @IBOutlet weak var categoryTableView: UITableView!
     
@@ -20,12 +29,39 @@ class FiltersViewController: UIViewController {
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.
+        categoryTableView.dataSource = self;
+        categoryTableView.delegate = self;
+        categoryTableView.rowHeight = UITableViewAutomaticDimension
+        categoryTableView.estimatedRowHeight = 50
+        
         categories = getCategories()
+        self.categoryTableView.reloadData()
     }
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
+    }
+    
+    func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        if categories != nil {
+            return categories!.count
+        } else {
+            return 0
+        }
+    }
+    
+    func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
+        let cell = self.categoryTableView.dequeueReusableCellWithIdentifier("CaegoryFilterCell", forIndexPath: indexPath) as! CategoryFilterCell
+        cell.categoryLabel.text = self.categories[indexPath.row]["name"]
+        cell.delegate = self as CategoryFilterCellDelegate
+        cell.categorySwitch.on = self.switchStates[indexPath.row] ?? false
+        return cell
+    }
+    
+    func categoryFilterCell(cfc: CategoryFilterCell, didChangeValue value: Bool) {
+        let indexPath = self.categoryTableView.indexPathForCell(cfc)!
+        self.switchStates[indexPath.row] = value
     }
     
 
@@ -36,7 +72,30 @@ class FiltersViewController: UIViewController {
     
     @IBAction func onSearchButton(sender: AnyObject) {
          dismissViewControllerAnimated(true, completion: nil)
+        
+        var filters = [String:AnyObject]()
+        var selectedCategories = [String]()
+        for (row, isSelected) in self.switchStates {
+            if isSelected {
+                selectedCategories.append(self.categories[row]["code"]!)
+            }
+        }
+        
+        if selectedCategories.count > 0 {
+            filters["categories"] = selectedCategories
+        }
+        
+        if dealSwitch.on {
+            filters["deal"] = true
+        } else {
+            filters["deal"] = false
+        }
+        
+        filters["sort"] = sortSegmentedControl.selectedSegmentIndex
+        
+        delegate?.filtersViewController?(self, didUpdateFilters: filters)
     }
+    
     
     func getCategories() -> [[String:String]] {
         return [["name" : "Afghan", "code": "afghani"],

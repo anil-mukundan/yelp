@@ -8,7 +8,7 @@
 
 import UIKit
 
-class BusinessesViewController: UIViewController, UITableViewDataSource, UITableViewDelegate {
+class BusinessesViewController: UIViewController, UITableViewDataSource, UITableViewDelegate, FiltersViewControllerDelegate {
     
     var businesses: [Business]!
     var searchBar: UISearchBar!
@@ -50,18 +50,6 @@ class BusinessesViewController: UIViewController, UITableViewDataSource, UITable
             self.businesses = businesses
             
             self.tableView.reloadData()
-            
-            if businesses != nil {
-                for business in businesses {
-                    print(business.name!)
-                    print(business.address!)
-                    print(business.imageURL!)
-                    print(business.ratingImageURL!)
-                }
-            } else {
-                print("business is empty");
-            }
-
         }
     }
     
@@ -83,14 +71,24 @@ class BusinessesViewController: UIViewController, UITableViewDataSource, UITable
         cell.business = self.businesses[indexPath.row]
         return cell
     }
-    
-    /*
+
     // MARK: - Navigation
     // In a storyboard-based application, you will often want to do a little preparation before navigation
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
-    // Get the new view controller using segue.destinationViewController.
-    // Pass the selected object to the new view controller.
+        let navigationController = segue.destinationViewController as! UINavigationController
+        let filterViewController = navigationController.topViewController as! FiltersViewController
+        filterViewController.delegate = self
     }
-    */
+
+    func filtersViewController(filtersviewController: FiltersViewController, didUpdateFilters filters: [String : AnyObject]) {
+        var categories = filters["categories"] as? [String]
+        var deal = filters["deal"] as? Bool
+        var sort = filters["sort"] as? YelpSortMode
+        Business.searchWithTerm("Restaurants", sort: sort, categories: categories, deals: deal) { (businesses: [Business]!, error: NSError!) -> Void in
+            self.businesses = businesses
+            
+            self.tableView.reloadData()
+        }
+    }
     
 }

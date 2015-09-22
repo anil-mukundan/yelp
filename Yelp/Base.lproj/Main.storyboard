@@ -152,28 +152,22 @@
                                 <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Distance" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="AeB-Mi-YU3">
-                                        <rect key="frame" x="17" y="137" width="139" height="21"/>
+                                        <rect key="frame" x="17" y="118" width="139" height="21"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                         <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Offering a deal" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="jJX-4B-TzC">
-                                        <rect key="frame" x="17" y="97" width="127" height="21"/>
+                                        <rect key="frame" x="17" y="82" width="127" height="21"/>
                                         <fontDescription key="fontDescription" type="boldSystem" pointSize="17"/>
                                         <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" on="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Uxe-hL-96Z">
-                                        <rect key="frame" x="263" y="87" width="51" height="31"/>
+                                        <rect key="frame" x="263" y="77" width="51" height="31"/>
                                     </switch>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Best Match" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="QNk-QR-iwu">
-                                        <rect key="frame" x="17" y="198" width="142" height="21"/>
-                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                        <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
-                                        <nil key="highlightedColor"/>
-                                    </label>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Categories" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Y7f-NA-6bQ">
-                                        <rect key="frame" x="17" y="263" width="142" height="21"/>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Sort By" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="QNk-QR-iwu">
+                                        <rect key="frame" x="17" y="183" width="142" height="21"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                         <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                         <nil key="highlightedColor"/>
@@ -189,16 +183,23 @@
                                                     <rect key="frame" x="0.0" y="0.0" width="295" height="43.5"/>
                                                     <autoresizingMask key="autoresizingMask"/>
                                                     <subviews>
-                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Afgan" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="wXG-qU-bXR">
+                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Afgan" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="wXG-qU-bXR">
                                                             <rect key="frame" x="15" y="11" width="137" height="21"/>
                                                             <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                             <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                                             <nil key="highlightedColor"/>
                                                         </label>
-                                                        <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" on="YES" translatesAutoresizingMaskIntoConstraints="NO" id="AZL-v6-Uba">
-                                                            <rect key="frame" x="231" y="8" width="51" height="31"/>
+                                                        <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" on="YES" translatesAutoresizingMaskIntoConstraints="NO" id="AZL-v6-Uba">
+                                                            <rect key="frame" x="231" y="4" width="51" height="31"/>
                                                         </switch>
                                                     </subviews>
+                                                    <constraints>
+                                                        <constraint firstItem="wXG-qU-bXR" firstAttribute="top" secondItem="RX1-VI-6dd" secondAttribute="top" constant="11" id="5gJ-a0-b3D"/>
+                                                        <constraint firstItem="AZL-v6-Uba" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="wXG-qU-bXR" secondAttribute="trailing" constant="8" id="8Oh-IG-Wtl"/>
+                                                        <constraint firstItem="wXG-qU-bXR" firstAttribute="leading" secondItem="RX1-VI-6dd" secondAttribute="leading" constant="15" id="DQa-xd-ds9"/>
+                                                        <constraint firstAttribute="trailing" secondItem="AZL-v6-Uba" secondAttribute="trailing" constant="10" id="KCT-2e-UYI"/>
+                                                        <constraint firstItem="AZL-v6-Uba" firstAttribute="centerY" secondItem="wXG-qU-bXR" secondAttribute="centerY" id="Z1G-T5-qXE"/>
+                                                    </constraints>
                                                 </tableViewCellContentView>
                                                 <connections>
                                                     <outlet property="categoryLabel" destination="wXG-qU-bXR" id="ENn-iy-d07"/>
@@ -207,6 +208,29 @@
                                             </tableViewCell>
                                         </prototypes>
                                     </tableView>
+                                    <segmentedControl opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="5CG-Ys-nCU">
+                                        <rect key="frame" x="17" y="141" width="287" height="29"/>
+                                        <segments>
+                                            <segment title="Auto"/>
+                                            <segment title="5 miles"/>
+                                            <segment title="10 miles"/>
+                                            <segment title="20 miles"/>
+                                        </segments>
+                                    </segmentedControl>
+                                    <segmentedControl opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="coA-7K-rVq">
+                                        <rect key="frame" x="17" y="212" width="287" height="29"/>
+                                        <segments>
+                                            <segment title="Best Match"/>
+                                            <segment title="Distance"/>
+                                            <segment title="Ratings"/>
+                                        </segments>
+                                    </segmentedControl>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Categories" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Y7f-NA-6bQ">
+                                        <rect key="frame" x="15" y="263" width="142" height="21"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
                                 </subviews>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                             </view>
@@ -234,6 +258,7 @@
                     <connections>
                         <outlet property="categoryTableView" destination="RrG-Kz-deT" id="X4F-zS-XdW"/>
                         <outlet property="dealSwitch" destination="Uxe-hL-96Z" id="Vdt-Cv-hCE"/>
+                        <outlet property="sortSegmentedControl" destination="coA-7K-rVq" id="bJr-up-CGg"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="kg9-1u-Jns" userLabel="First Responder" sceneMemberID="firstResponder"/>

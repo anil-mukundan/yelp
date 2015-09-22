@@ -8,21 +8,32 @@
 
 import UIKit
 
+protocol CategoryFilterCellDelegate {
+    func categoryFilterCell(CategoryFilterCell: CategoryFilterCell, didChangeValue value: Bool)
+}
+
 class CategoryFilterCell: UITableViewCell {
 
     @IBOutlet weak var categoryLabel: UILabel!
     
     @IBOutlet weak var categorySwitch: UISwitch!
     
+    var delegate: CategoryFilterCellDelegate?
+    
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code
+        categorySwitch.addTarget(self, action: "onCategorySelection", forControlEvents: UIControlEvents.ValueChanged)
     }
 
     override func setSelected(selected: Bool, animated: Bool) {
         super.setSelected(selected, animated: animated)
 
         // Configure the view for the selected state
+    }
+    
+    func onCategorySelection() {
+        delegate?.categoryFilterCell(self, didChangeValue: categorySwitch.on)
     }
 
 }
