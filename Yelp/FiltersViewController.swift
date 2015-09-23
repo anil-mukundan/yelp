@@ -29,6 +29,9 @@ class FiltersViewController: UIViewController, UITableViewDataSource, UITableVie
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.
+        // Make Naviation Bar red
+        navigationController?.navigationBar.barTintColor = UIColor.redColor()
+        
         categoryTableView.dataSource = self;
         categoryTableView.delegate = self;
         categoryTableView.rowHeight = UITableViewAutomaticDimension
